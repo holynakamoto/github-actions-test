@@ -2,15 +2,12 @@ name: Shell Commands
 
 on: push
 
-env:
-  environment_name: dev
-
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
       - name: echo string
-        run: eccho "Hello World"
+        run: eccho "Hello World" >> $GITHUB_ENV
       - name: multiline script
         run: |
           node -v
